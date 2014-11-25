@@ -59,7 +59,9 @@ describe('Transformation', function() {
 			var tree = yield TransformerPipe(this.filesTree, this.logger, [
 				TransformerStylus.treeToTree.bind({}),
 				TransformerAutoprefixer.treeToTree.bind({
-					browsers: this.browsers
+					options: {
+						browsers: this.browsers
+					}
 				})
 			]);
 
